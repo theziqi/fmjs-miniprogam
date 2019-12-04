@@ -1,0 +1,43 @@
+
+.userinfo {
+  position: relative;
+}
+
+.userinfo-avatar {
+  width: 88rpx;
+  height: 88rpx;
+  margin: 47rpx 63rpx;
+  border-radius: 50%;
+}
+
+.showt {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ibtn {
+  font-family: "AliHYAiHei";
+  font-size: 48rpx;
+  color: #fefefe;
+  margin-top: 40rpx;
+  width: 624rpx;
+  height: 96rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ictn {
+  width: 750rpx;
+  height: 518rpx;
+  margin-bottom: 120rpx;
+}
+
+page{
+  background-image: url("https://s2.ax1x.com/2019/11/24/MOxWB8.jpg");
+  background-size: cover;
+}

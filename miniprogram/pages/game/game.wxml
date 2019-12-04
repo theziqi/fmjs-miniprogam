@@ -1,0 +1,68 @@
+<view class="container">
+    <view hidden="{{!(!isStartGame && !isEndGame)}}">
+        <view class="gameTop">
+            <image class="avatar" style="width: 86rpx;height: 86rpx;border-radius: 50%;" src="{{avatarUrl}}"></image>
+            <button open-type="share" style="margin:0;padding: 0;width: 50rpx;background: none;">
+                <image src="../../static/3-zhuanfa-1.png" style="width: 50rpx;height: 36rpx;"></image>
+            </button>
+        </view>
+        <view>
+            <image class="logo" src="../../static/game-logo.png"></image>
+        </view>
+        <view class="gameRule">
+            <view style="color: #fcc200;font-weight: bold;">游戏规则：</view>
+            <view>在两种发明中选择出现较早的那一种， 看看45s内你能答对多少道~</view>
+            <view bindtap="startGame" class="startGamebtn">开始游戏</view>
+        </view>
+    </view>
+
+    <view hidden="{{!(isStartGame && !isEndGame)}}">
+        <view class="gameTop">
+            <image class="avatar" style="width: 86rpx;height: 86rpx;border-radius: 50%;" src="{{avatarUrl}}"></image>
+            <view class="{{isClosetoEnd ? 'daojishi_c' : 'daojishi'}}">{{countDownNum}}<text style="color: #fcc200;">s</text></view>
+        </view>
+        <view class="gameShow">
+            <view style="text-align: center;font-family: Source Han Sans CN;font-size: 32rpx;">以下哪个发明出现较早？</view>
+            <view style="display: flex;justify-content: space-between;margin-top: 48rpx;">
+                <view class="selectAnswer {{showS0}}" data-id="0" bindtap="{{isfirstaction ? 'selectAnswer' : ''}}">
+                    <view class="selectTitle {{selected!=null ? 'selectTitle_c' : ''}}">{{title0}}</view>
+                    <view class="selectYear" hidden="{{selected==null}}">{{year0}}</view>
+                    <view class="selectTip" hidden="{{selected==null}}">
+                        <image style="width: 34rpx;height: 34rpx;" src="{{answer ? yesSrc : noSrc}}"></image>
+                    </view>
+                </view>
+                <view class="selectAnswer {{showS1}}" data-id="1" bindtap="{{isfirstaction ? 'selectAnswer' : ''}}">
+                    <view class="selectTitle {{selected!=null ? 'selectTitle_c' : ''}}">{{title1}}</view>
+                    <view class="selectYear" hidden="{{selected==null}}">{{year1}}</view>
+                    <view class="selectTip" hidden="{{selected==null}}">
+                        <image style="width: 34rpx;height: 34rpx;" src="{{!answer ? yesSrc : noSrc}}"></image>
+                    </view>
+                </view>
+            </view>
+            <view style="text-align: center;font-size: 40rpx;color: #fcc200;font-family: AliHYAiHei;line-height: 100rpx;">答对题目：{{score}}</view>
+        </view>
+    </view>
+
+    <view hidden="{{!(isEndGame && !isStartGame)}}">
+        <view class="gameTop">
+            <image class="avatar" style="width: 86rpx;height: 86rpx;border-radius: 50%;" src="{{avatarUrl}}"></image>
+        </view>
+        <view class="showResult">
+            <view class="t1">恭喜你答对了 <text class="wt">{{score}}</text> 道题目！</view>
+            <view class="t1">在发明简史的用户中排名</view>
+            <view style="width: 100%;height: 200rpx;margin-top: 16rpx;"><view class="ranking wt">{{rank}}</view></view>
+            <view class="t2">超过了 <text class="wt" style="font-size: 56rpx;">{{percent}}%</text> 的用户！</view>
+            <view style="display: flex;justify-content: space-between;margin-top: 85rpx;">
+                <button class="recBtn" bindtap="rec">再次挑战</button>
+                <button class="shareBtn" open-type="share">分享好友</button>
+            </view>
+            <view class="t3">想了解更多发明简史的详情吗？</view>
+            <view class="searchTips">搜索你感兴趣的发明</view>
+            <view class="searchBar">
+                <input style="width: 460rpx;" value="{{sValue}}" bindinput="updateValue" data-name='sValue'></input>
+                <image src="../../static/2-1-sousuo-1.png" style="margin-left: 28rpx;width: 64rpx;height: 64rpx;" bindtap="onSearch"></image>
+            </view>
+            
+        </view>
+    </view>
+</view>

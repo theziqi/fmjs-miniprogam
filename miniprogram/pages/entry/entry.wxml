@@ -1,0 +1,38 @@
+<view class="container">
+    <view class="content">
+        <view class="contentTop">
+            <view>
+                <view style="font-family: AliHYAiHei;font-size: 56rpx;">{{title}}</view>
+                <view style="font-size: 32rpx;color: grey;margin-top: 10rpx;">{{show}}</view>
+            </view>
+            <view style="display: flex;align-items: center;">
+                <button bindtap="changeLike" class="dsd">
+                    <image src="{{isLike ? likeSrc : unlikeSrc}}" style="width: 50rpx;height: 50rpx;"></image>
+                    <view>点赞 {{likeCount}}</view>
+                </button>
+                <button bindtap="onShare" class="dsd" open-type="share">
+                    <image style="width: 50rpx;height: 36rpx;margin: 8rpx 0;" src="../../static/2-2-zhuanfa-1.png"></image>
+                    <view>分享 {{shareCount}}</view>
+                </button>
+            </view>
+        </view>
+        <view style="font-size: 28rpx;margin-top: 42rpx;font-family: Source Han Sans CN;line-height: 48rpx;">{{content}}</view>
+    </view>
+    <view style="height:6px;border:none;border-top:1rpx solid #2d4068;width: 100%;"></view>
+    <view>
+        <view style="font-family: Source Han Sans CN;font-size: 20px;color: #2d4068;">评论</view>
+        <view class="commentlist">
+            <view class="comment" wx:for="{{cmlist}}" wx:for-index="key" wx:for-item="item">
+                <view class="commentContent">
+                    <view class="nickname">{{item.nickname}}:</view>
+                    <view class="text">{{item.comment}}</view>
+                </view>
+            </view>
+        </view>
+        <view style="height: 60rpx;"></view>
+    </view>
+    <view class="sendComment">
+        <input class="sCinput" placeholder="请输入评论" value="{{cmValue}}" data-name="cmValue" bindinput="updateValue"/>
+        <button class="sCbtn" bindtap="sendComment" disabled="{{disable}}">发布</button>
+    </view>
+</view>

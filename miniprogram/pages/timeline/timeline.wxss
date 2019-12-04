@@ -1,0 +1,88 @@
+.top {
+  width: 700rpx;
+  margin: 38rpx auto;
+}
+
+.bottom {
+  position: fixed;
+  bottom: 100rpx;
+  width: 750rpx;
+}
+
+.startTlbtn {
+  width: 236rpx;
+  height: 80rpx;
+  background-color: #fcc200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 44rpx;
+  border-radius: 10rpx;
+  font-family: AliHYAiHei;
+}
+
+.switchyear {
+  width: 132rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  background-color: white;
+  color: #fcc200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.switchyear_S {
+  width: 132rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  background-color: #fcc200;
+  color: #fefefe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.t-canvas {
+  width: 750rpx;
+  height: 810px;
+}
+
+.pglist {
+  margin-top: 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+page {
+  color: #fefefe;
+  background-size: cover;
+  background-image: url("https://s2.ax1x.com/2019/11/24/MOxanK.jpg");
+  overflow-y: scroll;
+}
+
+.top {
+  width: 700rpx;
+  margin: 38rpx auto;
+}
+
+.slide {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 304rpx;
+  right: 22rpx;
+  bottom: 187rpx;
+  width: 64rpx;
+}
+
+.toTop {
+  background: none;
+  margin: 0;
+  font-family: AliHYAiHei;
+  font-size: 30rpx;
+  line-height: 45rpx;
+  color: #fcc200;
+}

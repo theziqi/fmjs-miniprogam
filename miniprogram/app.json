@@ -1,0 +1,22 @@
+{
+	"pages": [
+		"pages/index/index",
+		"pages/timeline/timeline",
+		"pages/search/search",
+		"pages/entry/entry",
+		"pages/game/game"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "发明简史",
+		"navigationBarTextStyle": "black"
+	},
+	"sitemapLocation": "sitemap.json",
+  "plugins":{
+    "QCloudAIVoice": {
+      "version": "1.0.3",
+      "provider": "wx3e17776051baf153"
+    }
+  }
+}
