@@ -5,7 +5,7 @@ const app = getApp()
 var objM = {};
 
 var plugin = requirePlugin("QCloudAIVoice")
-plugin.setQCloudSecret(, , )//此处填入你的腾讯云APPID，SecretId，SecretKeSecretKeyy
+plugin.setQCloudSecret('1300735296', 'AKIDwTlna9Uw0oNhpiIo7FBuNaZI7h2CexTo', 'JQ8f7OUMzMVebIlzyhBZonXIn22mIaVE')
 let manager = plugin.getRecordRecognitionManager()
 Page({
   data: {
@@ -45,6 +45,14 @@ Page({
 			isSpeaking: true
 		})
     manager.start()
+	},
+
+	stopVoice: function(){
+		this.setData({
+			isSpeaking: false,
+			sValue: ""
+		})
+		manager.stop()
 	},
 
 	endVoice: function () {

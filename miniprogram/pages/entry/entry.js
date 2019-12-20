@@ -77,8 +77,11 @@ Page({
       }
     }).then(res => {
       console.log(res.result);
+			that.setData({
+				cmValue: ""
+			});
+			that.getCmlist();
     });
-    that.getCmlist();
   },
 
   onShareAppMessage: function(res) {
@@ -106,8 +109,8 @@ Page({
     }).then(res => {
       console.log(res.result);
       console.log("分享成功");
+			that.getLSnums();
     });
-    this.getLSnums();
   },
 
   changeLike: function() {
@@ -117,7 +120,7 @@ Page({
         name: 'like',
         data: {
           opt: {
-            ession_key: app.globalData.session_key,
+            session_key: app.globalData.session_key,
             action: "DELETE",
             tpid: that.data.id,
             choice: "like"
@@ -125,10 +128,13 @@ Page({
         }
       }).then(res => {
         console.log(res.result);
+				if(res.result.state){
         console.log("取消点赞");
         that.setData({
           isLike: false
         });
+				that.getLSnums();
+				}
       });
     } else {
       wx.cloud.callFunction({
@@ -143,13 +149,16 @@ Page({
         }
       }).then(res => {
         console.log(res.result);
+				if (res.result.state) {
         console.log("点赞成功");
         that.setData({
           isLike: true
         });
+					that.getLSnums();
+				}
       });
     };
-    this.getLSnums();
+
   },
 
   onLoad: function(options) {

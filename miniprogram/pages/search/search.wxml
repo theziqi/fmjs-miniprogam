@@ -19,14 +19,16 @@
       </view>
     </view>
   </view>
-  <view class="bottom" bindlongtap="onVoice" bindtouchend="endVoice" hidden="{{!showS}}">
+</view>
+
+  <view class="bottom" bindlongtap="onVoice" catchtouchmove="stopVoice" bindtouchend="endVoice" hidden="{{!showS}}">
     <image src="../../static/2-1-luyin-1.png" style="width: 34rpx;height: 50rpx;margin: 0 8rpx;"></image>
     <view>按住说话，搜索一下</view>
   </view>
   <view class="listening" hidden="{{!isSpeaking}}">
     <view style="margin-top:25rpx;font-size: 30rpx;color: #3f3f3f;">正在聆听</view>
     <view>
-			<image src="../../static/yuying.gif" style="margin-top:35rpx;width:64rpx;height:64rpx;"></image>
+			<image src="../../static/yuying.gif" style="margin-top: 25rpx;width:64rpx;height:64rpx;"></image>
     </view>
+		<view style="font-size: 24rpx;color: #a7a7a7;">向上滑动取消搜索</view>
   </view>
-</view>
